@@ -163,5 +163,4 @@ Converts image into high-contrast black & white.
 
 ## Author
 
-Your Name
-
+Ahan Mondal

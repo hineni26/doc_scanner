@@ -157,7 +157,6 @@ Converts image into high-contrast black & white.
 * Live camera scanning
 * Automatic cropping
 * OCR (text extraction)
-* Cloud deployment
 
 ---
 

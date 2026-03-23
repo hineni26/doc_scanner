@@ -1,10 +1,12 @@
 import cv2
-from utils import resize_image, show_image
+from scanner import get_document_contour
+from utils import show_image
 
-img = cv2.imread("data/input/test.jpg")
+image, contour = get_document_contour("data/input/test.jpg")
 
-if img is None:
-    print("Image not found")
+if contour is None:
+    print("No document detected")
 else:
-    img = resize_image(img)
-    show_image("Test", img)
+    # draw contour
+    cv2.drawContours(image, [contour], -1, (0, 255, 0), 2)
+    show_image("Detected Document", image)

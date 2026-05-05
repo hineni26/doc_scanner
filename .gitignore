@@ -1,3 +1,5 @@
 venv/
 __pycache__/
 *.pyc
+Document_Scanner_Report.docx
+temp.jpg

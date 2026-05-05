@@ -64,7 +64,7 @@ doc_scanner/
 │   ├── utils.py       # Helper functions
 ├── data/
 │   ├── input/         # Sample input images
-│   ├── output/        # Generated PDFs
+│   ├── output/        # Generated images
 ├── requirements.txt
 ├── README.md
 ```

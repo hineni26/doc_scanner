@@ -1,29 +1,29 @@
 # Document Scanner App
 
-A simple computer vision project that scans documents from images and converts them into clean, readable PDF files.
+A computer vision application that scans documents from images and converts them into clean, readable PDF documents.
 
-Built using OpenCV and Streamlit.
+Built using **OpenCV** and **Streamlit**.
 
 ---
 
 ## Features
 
-* Detects document edges automatically
-* Corrects perspective (flattens the page)
-* Removes shadows and background noise
-* Enhances readability (black & white scan)
-* Supports multiple images
-* Exports scanned pages as a single PDF
+- Automatic document edge detection  
+- Perspective correction (flattening)  
+- Shadow and noise removal  
+- Black & white enhancement for readability  
+- Supports multiple image uploads  
+- Export all pages into a single PDF  
 
 ---
 
 ## Tech Stack
 
-* Python
-* OpenCV → image processing
-* NumPy → numerical operations
-* Streamlit → web app interface
-* Pillow → PDF generation
+- **Python**
+- **OpenCV** — image processing
+- **NumPy** — numerical operations
+- **Streamlit** — web interface
+- **Pillow** — PDF generation
 
 ---
 
@@ -32,31 +32,25 @@ Built using OpenCV and Streamlit.
 The app follows this pipeline:
 
 1. **Image Upload**
-
-   * User uploads one or more images.
+   - User uploads one or more images
 
 2. **Document Detection**
-
-   * Uses contour detection to find the document edges.
-   * Filters shapes to detect a 4-sided boundary.
+   - Detects edges using contour detection
+   - Identifies the largest 4-sided shape (document)
 
 3. **Perspective Transform**
-
-   * Converts tilted document into a flat top-down view.
+   - Warps the image to get a top-down scanned view
 
 4. **Preprocessing**
-
-   * Converts to grayscale
-   * Removes shadows using background normalization
-   * Applies denoising
+   - Converts to grayscale  
+   - Removes shadows  
+   - Applies denoising  
 
 5. **Thresholding**
-
-   * Converts image into clean black & white for readability
+   - Converts image to high-contrast black & white  
 
 6. **PDF Generation**
-
-   * All processed images are combined into a single PDF
+   - Combines all processed images into a single PDF  
 
 ---
 
@@ -64,13 +58,13 @@ The app follows this pipeline:
 
 ```
 doc_scanner/
-├── app.py
+├── app.py              # Streamlit UI
 ├── src/
-│   ├── scanner.py
-│   ├── utils.py
+│   ├── scanner.py     # Core image processing
+│   ├── utils.py       # Helper functions
 ├── data/
-│   ├── input/
-│   ├── output/
+│   ├── input/         # Sample input images
+│   ├── output/        # Generated PDFs
 ├── requirements.txt
 ├── README.md
 ```
@@ -81,85 +75,104 @@ doc_scanner/
 
 ### 1. Clone the repository
 
-```
-git clone https://github.com/YOUR_USERNAME/doc_scanner.git
+```bash
+git clone https://github.com/hineni26/doc_scanner.git
 cd doc_scanner
 ```
 
 ---
 
-### 2. Create environment (conda recommended)
+### 2. Create a virtual environment
 
-```
+```bash
 conda create --prefix ./venv python=3.10
 conda activate ./venv
 ```
+
+(You can also use `venv` if preferred)
 
 ---
 
 ### 3. Install dependencies
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## Run the App
+##  Run the App
 
-```
+```bash
 streamlit run app.py
 ```
 
-Then open the link shown in terminal.
+Open the local URL shown in the terminal.
 
 ---
 
 ## Usage
 
-1. Upload one or more images
+1. Upload one or more document images  
 2. The app will automatically:
-
-   * detect the document
-   * scan and enhance it
-3. Click **Download PDF** to get the final output
+   - Detect the document  
+   - Enhance and scan it  
+3. Click **Download PDF** to save the result  
 
 ---
 
-## Key Concepts Used
+## Sample Data
 
-### 1. Edge Detection
+- Place test images in:
+  ```
+  data/input/
+  ```
+- Output PDFs will be saved in:
+  ```
+  data/output/
+  ```
 
-Detects boundaries of objects in the image.
+---
 
-### 2. Contour Detection
+## Limitations
 
-Finds shapes and identifies the document region.
-
-### 3. Perspective Transform
-
-Maps the document into a flat rectangular view.
-
-### 4. Image Enhancement
-
-* Noise removal
-* Shadow removal
-* Contrast improvement
-
-### 5. Thresholding
-
-Converts image into high-contrast black & white.
+- Works best with clear, high-contrast images  
+- May fail on blurry or cluttered backgrounds  
+- Requires visible document boundaries  
 
 ---
 
 ## Future Improvements
 
-* Live camera scanning
-* Automatic cropping
-* OCR (text extraction)
+- Live camera scanning  
+- Automatic cropping UI  
+- OCR (text extraction)  
+- Mobile-friendly interface  
+
+---
+
+## Motivation
+
+This project demonstrates practical use of computer vision techniques such as contour detection and perspective transformation to solve a real-world problem.
+
+---
+
+## Demo (Add Screenshots)
+
+_Add screenshots or GIFs here to showcase:_
+- Input image  
+- Edge detection  
+- Final scanned output  
+- App interface  
+
+---
+
+## License
+
+GPL License
 
 ---
 
 ## Author
 
-Ahan Mondal
+**Ahan Mondal**
